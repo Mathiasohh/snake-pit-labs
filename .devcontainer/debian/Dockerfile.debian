@@ -9,6 +9,9 @@ ENV USERNAME=container-user \
 RUN apt-get update && apt-get install -y --no-install-recommends \
     ca-certificates \
     curl \
+    gcc \
+    libc6-dev \
+    make \
     openssh-client \
     stow \
     sudo \
@@ -28,4 +31,16 @@ RUN groupadd --gid $USER_GID $USERNAME && \
 ENV NVM_DIR="${LOCAL_BIN}/.nvm"
 ENV PATH="$NVM_DIR/current:$PATH"
 RUN mkdir -p "$NVM_DIR" && curl -fsSL https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | PROFILE="$HOME_DIR/.zshrc" bash
+
+# Using BuildKit's build in `TARGETARCH` insted of ARCH="$(dpkg --print-architecture)" 
+ARG TARGETARCH
+
+ARG USER_BIN=/usr/local/bin
+
+# -fsSL: (f)ail on HTTP errors, (s)ilent, (S)how error messages, fo(L)low redirects
+# Favorite shell text editor nvim
+ARG NVIM_VERSION=0.12.6
+RUN NVIM_ARCH="$([ "$TARGETARCH" = amd64 ] && echo x86_64 || echo "$TARGETARCH")" \
+    && curl -fsSL "https://github.com/neovim/neovim/releases/download/v${NVIM_VERSION}/nvim-linux-${NVIM_ARCH}.tar.gz" \
+    | tar -xz -C /usr/local --strip-components=1
 
