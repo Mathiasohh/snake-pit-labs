@@ -1,0 +1,28 @@
+name: snake-pit-py-debian
+
+services:
+  dev:
+    build:
+      context: .
+      dockerfile: Dockerfile.debian
+      additional_contexts:
+        tmp: /tmp
+    command: sleep infinity
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - ../..:/xyz:cached
+      - gemini:~/.gemini
+      - claude:~/.claude
+      - ssh:~/.ssh
+      - ssh-template:~/.sshtemplate
+
+volumes:
+  gemini:
+    name: sppd-gemini
+  claude:
+    name: sppd-claude
+  ssh:
+    name: sppd-ssh
+  ssh-template:
+    name: sppd-ssh-template
