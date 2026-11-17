@@ -19,7 +19,8 @@
                 "ritwickdey.LiveServer",
                 "DavidAnson.vscode-markdownlint",
                 "Anthropic.claude-code",
-                "timonwong.shellcheck"
+                "timonwong.shellcheck",
+                "streetsidesoftware.code-spell-checker-danish"
             ]
         }
     }

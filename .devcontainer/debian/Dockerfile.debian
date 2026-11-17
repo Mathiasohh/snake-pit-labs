@@ -9,6 +9,7 @@ ENV USERNAME=container-user \
 RUN apt-get update && apt-get install -y --no-install-recommends \
     ca-certificates \
     curl \
+    openssh-client \
     stow \
     sudo \
     git \
