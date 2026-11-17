@@ -6,18 +6,20 @@
     "remoteUser": "container-user",
     "shutdownAction": "stopCompose",
     "features": {
-    "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {
-        "moby": false
+        "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {
+            "moby": false
         }
     },
     "postCreateCommand": "bash .devcontainer/scripts/post-create.sh",
-"customizations": {
-    "vscode": {
-        "extensions": [
-            "streetsidesoftware.code-spell-checker",
-            "google.google-antigravity",
-            "ritwickdey.LiveServer",
-            "DavidAnson.vscode-markdownlint"
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "streetsidesoftware.code-spell-checker",
+                "google.google-antigravity",
+                "ritwickdey.LiveServer",
+                "DavidAnson.vscode-markdownlint",
+                "Anthropic.claude-code",
+                "timonwong.shellcheck"
             ]
         }
     }
