@@ -22,6 +22,7 @@
                 "timonwong.shellcheck",
                 "streetsidesoftware.code-spell-checker-danish",
                 "EditorConfig.EditorConfig",
+                "ms-python.python",
                 "ms-toolsai.jupyter"
             ]
         }

@@ -8,3 +8,5 @@ sudo chown -R container-user:container-user \
   "$HOME/.gemini" \
   "$HOME/.ssh" \
   "$HOME/.sshtemplate" 2>/dev/null || true
+# Create notebooks/.venv (Python + ipykernel) from pyproject.toml and uv.lock.
+uv sync --project notebooks
