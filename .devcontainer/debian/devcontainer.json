@@ -20,7 +20,9 @@
                 "DavidAnson.vscode-markdownlint",
                 "Anthropic.claude-code",
                 "timonwong.shellcheck",
-                "streetsidesoftware.code-spell-checker-danish"
+                "streetsidesoftware.code-spell-checker-danish",
+                "EditorConfig.EditorConfig",
+                "ms-toolsai.jupyter"
             ]
         }
     }

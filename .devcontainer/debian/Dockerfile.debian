@@ -43,4 +43,3 @@ ARG NVIM_VERSION=0.12.6
 RUN NVIM_ARCH="$([ "$TARGETARCH" = amd64 ] && echo x86_64 || echo "$TARGETARCH")" \
     && curl -fsSL "https://github.com/neovim/neovim/releases/download/v${NVIM_VERSION}/nvim-linux-${NVIM_ARCH}.tar.gz" \
     | tar -xz -C /usr/local --strip-components=1
-

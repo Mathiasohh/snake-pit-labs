@@ -27,3 +27,9 @@ NVIM_ARCH="$([ "$TARGETARCH" = amd64 ] && echo x86_64 || echo "$TARGETARCH")" \
 # Verificér resultatet
 "$USER_BIN/bin/nvim" --version | head -n 1
 echo "OK: nvim ${NVIM_VERSION} (${NVIM_ARCH}) installeret i ${USER_BIN}"
+
+# Anaconda installation
+
+# curl -O https://repo.anaconda.com/archive/Anaconda3-2026.07-1-Linux-x86_64.sh
+# curl -O https://repo.anaconda.com/archive/Anaconda3-2026.07-1-Linux-aarch64.sh
+
